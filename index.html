@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcana Portfolio Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor-light"></div>
+  <div class="bg-layer bg-stars"></div>
+  <div class="bg-layer bg-orbits"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">
+          <span>Arcana</span>
+          <span>Portfolio Studio</span>
+        </span>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="payment.html">Payment</a></li>
+          <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="window.location.href='contact.html'">Start a Project</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME ONLY -->
+    <section id="home" class="hero section">
+      <div class="hero-layout">
+        <div class="hero-main">
+          <p class="pill">Builiding Custom Digital Portfolios</p>
+          <h1>
+            Turn your<br />
+            <span class="accent">Potential</span> into <span class="accent">Pixels</span>.
+          </h1>
+          <p class="hero-text">
+           Your effort deserves to be seen. Arcana transforms your work into a digital portfolio that brings opportunity, tracks your progress, and reminds you how far you’ve come—so you can feel proud and share your achievements with confidence.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="contact.html">Book a free call</a>
+            <a class="btn ghost" href="portfolio.html">see our work</a>
+          </div>
+
+          <div class="hero-strip">
+            <div class="chip-stack">
+              <span class="chip">Students &amp; High School / University</span>
+              <span class="chip">Freelancers</span>
+              <span class="chip">Founders</span>
+            </div>
+            <div class="metric-row">
+              <div class="metric-block">
+                <span class="metric-label">Avg. completion</span>
+                <span class="metric-value" data-animate-number="7">7 days</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-label">Custom layouts</span>
+                <span class="metric-value">100%</span>
+              </div>
+              <div class="metric-block">
+                <span class="metric-label">Client satisfaction</span>
+                <span class="metric-value" data-animate-number="" data-suffix="/"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section layout-section">
+      <div class="layout-card">
+        <div class="layout-left">
+          <div class="avatar-block">
+            <div class="preview-avatar-glow"></div>
+            <div class="preview-avatar"></div>
+            <div class="preview-lines">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="layout-copy">
+            <span class="map-pill">Arcana layout engine</span>
+            <h3>Visual identity, story clarity, and interaction depth — tuned for you.</h3>
+            <p>Slide-ready sections that feel premium: one-link portfolios, investor decks, and interactive resume moments.</p>
+          </div>
+        </div>
+        <div class="layout-right">
+          <div class="stack-bars">
+            <div class="stack-bar">
+              <div class="stack-bar-head">
+                <span>Visual identity</span>
+                <span class="stack-value" data-bar-value="visual">88%</span>
+              </div>
+              <p class="stack-desc"></p>
+              <div class="bar-rail">
+                <div class="bar-fill" data-bar="88" data-bar-key="visual"></div>
+              </div>
+            </div>
+            <div class="stack-bar">
+              <div class="stack-bar-head">
+                <span>Story clarity</span>
+                <span class="stack-value" data-bar-value="story">95%</span>
+              </div>
+              <p class="stack-desc"></p>
+              <div class="bar-rail">
+                <div class="bar-fill" data-bar="95" data-bar-key="story"></div>
+              </div>
+            </div>
+            <div class="stack-bar">
+              <div class="stack-bar-head">
+                <span>Interaction depth</span>
+                <span class="stack-value" data-bar-value="interaction">86%</span>
+              </div>
+              <p class="stack-desc"></p>
+              <div class="bar-rail">
+                <div class="bar-fill" data-bar="86" data-bar-key="interaction"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tune-block">
+            <div class="stack-bar-head">
+              <span>Play with the balance</span>
+              <span class="stack-value">Drag to compare focus</span>
+            </div>
+            <div class="tune-row">
+              <label for="visual-tune">Visual identity</label>
+              <input type="range" id="visual-tune" class="bar-slider" data-target="visual" min="20" max="100" value="88" />
+            </div>
+            <div class="tune-row">
+              <label for="story-tune">Story clarity</label>
+              <input type="range" id="story-tune" class="bar-slider" data-target="story" min="20" max="100" value="95" />
+            </div>
+            <div class="tune-row">
+              <label for="interaction-tune">Interaction depth</label>
+              <input type="range" id="interaction-tune" class="bar-slider" data-target="interaction" min="20" max="100" value="86" />
+            </div>
+          </div>
+          <div class="badge-row">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              One-link portfolios
+            </div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Case-study storytelling
+            </div>
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Your place to share
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; 2025 Arcana Portfolio Studio. All rights reserved. Designed by Basit A.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
