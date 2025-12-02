@@ -4,7 +4,7 @@
   --bg-soft: #050505;
   --fg: #f5f5f5;
   --muted: #a3a3a3;
-  --accent: #ff6100;
+  --accent: #ff6200;
   --accent-soft: rgba(255, 97, 0, 0.25);
   --border-soft: rgba(255, 255, 255, 0.08);
   --radius-lg: 1.5rem;
@@ -745,6 +745,13 @@ body {
   margin: 0 0 0.5rem;
 }
 
+/* Contact widget card override for better contrast on dark bg */
+.contact-widget {
+  background: radial-gradient(circle at 20% 0, rgba(255, 255, 255, 0.08), rgba(8, 8, 8, 0.9));
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f5f5f5;
+}
+
 .project-thumb {
   border-radius: 0.9rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -804,6 +811,7 @@ body {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: 0.8rem;
 }
 
 .feature-badges .badge {
@@ -823,6 +831,10 @@ body {
   background: radial-gradient(circle at 25% 10%, rgba(255, 97, 0, 0.15), #050505 70%);
   min-height: 220px;
   box-shadow: var(--shadow-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .image-block.tall {
@@ -874,6 +886,23 @@ body {
   color: var(--muted);
   display: grid;
   gap: 0.25rem;
+}
+
+.cta-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.translator-bar {
+  display: flex;
+  justify-content: center;
+  padding: 0.4rem 1rem 0.2rem;
+}
+
+.translator-bar .elfsight-app-3abb3e26-469a-45ec-b39b-bbba6cfabcd2 {
+  position: static !important;
 }
 
 .addons {
@@ -962,17 +991,36 @@ body {
 
 .contact-form {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.9rem;
+}
+
+.contact-form-card {
+  background: radial-gradient(circle at 20% 0, rgba(255, 97, 0, 0.12), #060606 75%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-strong);
+}
+
+.contact-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: rgba(245, 245, 245, 0.9);
 }
 
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 0.7rem 0.8rem;
-  border-radius: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(8, 8, 8, 0.9);
+  padding: 0.85rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(10, 10, 10, 0.92);
   color: var(--fg);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .contact-form textarea {
@@ -980,8 +1028,37 @@ body {
   resize: vertical;
 }
 
-.contact-form button {
-  justify-self: flex-start;
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 130, 50, 0.8);
+  box-shadow: 0 0 0 3px rgba(255, 97, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.form-status {
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+  color: rgba(245, 245, 245, 0.8);
+}
+
+.form-status.pending {
+  color: #ffb347;
+}
+
+.form-status.success {
+  color: #9be29b;
+}
+
+.form-status.error {
+  color: #ff8a80;
 }
 
 .contact-details {
@@ -1013,83 +1090,78 @@ body {
   box-shadow: var(--shadow-strong);
   padding: 1.4rem 1.3rem 1.3rem;
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.2rem;
   align-items: center;
+  overflow: hidden;
 }
 
 .layout-left {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
+}
+
+.report-block {
+  background: linear-gradient(140deg, rgba(255, 97, 0, 0.12), #060606 70%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-strong);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.report-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.report-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.45rem;
+  margin: 0.4rem 0 0.6rem;
+}
+
+.report-metrics .metric {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.65rem;
+}
+
+.report-progress {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.progress-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.4rem;
   align-items: center;
 }
 
-.avatar-block {
-  position: relative;
-}
-
-.preview-avatar-glow {
-  position: absolute;
-  inset: -20%;
-  background: radial-gradient(circle at 20% 0%, rgba(255, 97, 0, 0.45), transparent);
-  opacity: 0.7;
-}
-
-.preview-avatar {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 40% 60% 55% 45%;
-  background:
-    radial-gradient(circle at 25% 15%, rgba(255, 255, 255, 0.18), transparent 35%),
-    conic-gradient(from 140deg, rgba(255, 97, 0, 0.4), transparent 50%, rgba(255, 255, 255, 0.08)),
-    radial-gradient(circle at 50% 50%, #0f172a, #020617 70%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.9), inset 0 0 22px rgba(255, 97, 0, 0.2);
-  overflow: hidden;
-  margin-bottom: 0.85rem;
-}
-
-.preview-avatar::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 45%),
-    radial-gradient(circle at 20% 30%, rgba(255, 97, 0, 0.25), transparent 40%);
-  mix-blend-mode: soft-light;
-}
-
-.preview-lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.preview-lines span {
-  display: block;
+.bar-fill.inline {
+  transform-origin: left center;
+  background: linear-gradient(90deg, #ffb347, #ff6100);
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent);
-  overflow: hidden;
-  position: relative;
+  transition: transform 0.35s ease;
 }
 
-.preview-lines span::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #ff6100, transparent 55%);
-  transform: translateX(-60%);
-  animation: shimmer 3.5s linear infinite;
-}
-
-.preview-lines span:nth-child(2)::before {
-  animation-delay: 0.5s;
-}
-.preview-lines span:nth-child(3)::before {
-  animation-delay: 0.9s;
+.report-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .layout-copy h3 {

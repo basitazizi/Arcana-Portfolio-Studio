@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Payment | Arcana Portfolio Studio</title>
+  <title>Contact Form | Arcana Portfolio Studio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,34 +29,41 @@
           <li><a class="nav-link" href="testimonials.html">Testimonials</a></li>
           <li><a class="nav-link" href="about.html">About</a></li>
           <li><a class="nav-link" href="payment.html">Payment</a></li>
-          <li><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
-        <button class="nav-cta" onclick="window.location.href='contact.html'">Start a Project</button>
+        <button class="nav-cta" onclick="window.location.href='contact.html'">Back to Contact</button>
       </div>
     </div>
   </header>
 
   <main>
     <section class="section page-hero">
-      <p class="pill">Secure payment</p>
-      <h1>Pay your Arcana build with trusted options.</h1>
-      <p class="page-lede">We accept PayPal, Cash App, and Zelle. Transactions are confirmed instantly.</p>
+      <p class="pill">Contact form</p>
+      <h1>Drop your details, we’ll reply same day.</h1>
+      <p class="page-lede">Send a quick note with your email and what you need. We’ll get back fast.</p>
     </section>
 
     <section class="section">
-      <div class="payment-options">
-        <div class="payment-chip">PayPal</div>
-        <div class="payment-chip">Cash App</div>
-        <div class="payment-chip">Zelle</div>
-      </div>
-
-      <div class="card" style="margin-top:1rem;">
-        <p class="pill-title">Pricing summary</p>
-        <p>Choose your package on the Services page, add any upgrades, and we’ll send a payment request via PayPal, Cash App, or Zelle.</p>
-        <p class="pill-title" style="margin-top:0.6rem;">Refund policy</p>
-        <p class="refund-box" style="margin-top:0.4rem;">
-          100% refund before design begins; 50% refund after first draft; no refunds after final approval.
-        </p>
+      <div class="card contact-form-card">
+        <p class="pill-title">Start here</p>
+        <h2 style="margin:0 0 0.4rem;">Tell us about your project</h2>
+        <form class="contact-form" action="https://formspree.io/f/mldqnldp" method="POST">
+          <label>
+            Your email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Full name" />
+          </label>
+          <label>
+            What do you need?
+            <textarea name="message" placeholder="Portfolio build, pages needed, timeline, goals" required></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send</button>
+            <div class="form-status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
       </div>
     </section>
   </main>
@@ -71,9 +78,10 @@
     </div>
   </footer>
 
-  <!-- Elfsight AI Chatbot -->
+  <!-- Elfsight platform + chatbot -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
   <div class="elfsight-app-94225226-74cc-4076-8b2d-87b7376048ae" data-elfsight-app-lazy></div>
+  <div class="elfsight-app-baf5bd7f-2ac8-478b-b582-d2da92c99be9" data-elfsight-app-lazy></div>
 
   <script src="script.js"></script>
 </body>

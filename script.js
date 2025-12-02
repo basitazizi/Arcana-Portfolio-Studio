@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const barValueMap = {};
   const navToggle = document.querySelector(".nav-toggle");
   const navMenu = document.querySelector(".nav-menu");
+  const contactForms = document.querySelectorAll(".contact-form");
 
   // Dynamic cursor light
   document.addEventListener("mousemove", (e) => {
@@ -98,5 +99,48 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     requestAnimationFrame(tick);
+  });
+
+  // Contact form async submit + status
+  contactForms.forEach((form) => {
+    const status = form.querySelector(".form-status");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (status) {
+        status.textContent = "Sending...";
+        status.className = "form-status pending";
+      }
+
+      const data = new FormData(form);
+      try {
+        const res = await fetch(form.action, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+        if (!res.ok) throw new Error("Request failed");
+        if (status) {
+          status.textContent = "Thanks! We got your note.";
+          status.className = "form-status success";
+        }
+        form.reset();
+      } catch (err) {
+        if (status) {
+          status.textContent = "Something went wrong. Try again or email us.";
+          status.className = "form-status error";
+        }
+      }
+    });
+
+    // Add subtle focus glow on form container
+    const inputs = form.querySelectorAll("input, textarea");
+    inputs.forEach((field) => {
+      field.addEventListener("focus", () => form.classList.add("active"));
+      field.addEventListener("blur", () => {
+        if (!form.querySelector("input:focus, textarea:focus")) {
+          form.classList.remove("active");
+        }
+      });
+    });
   });
 });
